@@ -16,10 +16,7 @@ export default {
     plugins: [
         peerDepsExternal(),
         commonjs({
-            include: 'node_modules/**',
-            namedExports: {
-                'react-is': ['isForwardRef', 'isValidElementType'],
-            },
+            include: 'node_modules/**'
         }),
         resolve(),
         babel({
