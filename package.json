@@ -1,6 +1,6 @@
 {
   "name": "@chrisdesigns/glare-viewer",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "AR and VR viewer component for GLARE",
   "main": "dist/index.js",
   "scripts": {

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { useLoader } from 'react-three-fiber';
+import { useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three';
-import { DeviceOrientationControls } from 'drei';
+import { DeviceOrientationControls } from '@react-three/drei';
 
 function handleVideo(video) {
 

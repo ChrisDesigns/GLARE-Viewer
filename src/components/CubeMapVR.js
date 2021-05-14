@@ -1,6 +1,6 @@
 import React from 'react';
-import { useLoader } from 'react-three-fiber';
-import { OrbitControls } from 'drei'
+import { useLoader } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei'
 import { TextureLoader, FrontSide, Vector3 } from 'three';
 
 const OverlayVR = ({ data, tourBasePath }) => {
