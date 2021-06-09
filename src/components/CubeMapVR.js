@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoader } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei'
 import { TextureLoader, FrontSide, Vector3 } from 'three';
+import { VirtualObject } from "./VirtualObject";
 
 const OverlayVR = ({ data, tourBasePath }) => {
   const { overlay_size = 10, overlay_offset_x = 0, overlay_offset_y = 0, overlay } = data;
@@ -75,7 +76,7 @@ const CubeMap = ({ panorama_image, tourBasePath }) => {
 
 
 const CubeMapVR = React.memo(({ data, tourBasePath }) => {
-  const { panorama_image, overlay } = data;
+  const { panorama_image, overlay, virtual_object } = data;
 
   return (
     <>
@@ -83,6 +84,7 @@ const CubeMapVR = React.memo(({ data, tourBasePath }) => {
         {panorama_image && <CubeMap panorama_image={panorama_image} tourBasePath={tourBasePath} />}
         { overlay && <OverlayVR data={data} tourBasePath={tourBasePath} />}
       </group>
+      { virtual_object && <VirtualObject virtual_object={virtual_object} tourBasePath={tourBasePath} />}
       <OrbitControls
         enablePan={false}
         enableDamping

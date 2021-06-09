@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three';
 import { DeviceOrientationControls } from '@react-three/drei';
+import { VirtualObject } from "./VirtualObject";
+
 
 function handleVideo(video) {
 
@@ -66,7 +68,7 @@ function handleVideo(video) {
 }
 
 const SphereMapAR = React.memo(({ data, video, tourBasePath }) => {
-    const { overlay } = data;
+    const { overlay, virtual_object } = data;
 
     const texture = useLoader(TextureLoader, tourBasePath + overlay);
 
@@ -84,6 +86,7 @@ const SphereMapAR = React.memo(({ data, video, tourBasePath }) => {
                     </sprite>}
                 </mesh>
             </group>
+            { virtual_object && <VirtualObject virtual_object={virtual_object} tourBasePath={tourBasePath} />}
             <DeviceOrientationControls />
         </>
     );
