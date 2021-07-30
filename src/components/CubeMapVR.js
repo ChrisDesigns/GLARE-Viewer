@@ -81,10 +81,10 @@ const CubeMapVR = React.memo(({ data, tourBasePath }) => {
   return (
     <>
       <group dispose={null}>
-        {panorama_image && <CubeMap panorama_image={panorama_image} tourBasePath={tourBasePath} />}
-        { overlay && <OverlayVR data={data} tourBasePath={tourBasePath} />}
+        { !!panorama_image && <CubeMap panorama_image={panorama_image} tourBasePath={tourBasePath} />}
+        { !!overlay && <OverlayVR data={data} tourBasePath={tourBasePath} />}
       </group>
-      { virtual_object && <VirtualObject virtual_object={virtual_object} tourBasePath={tourBasePath} />}
+      { !!virtual_object && <VirtualObject virtual_object={virtual_object} tourBasePath={tourBasePath} />}
       <OrbitControls
         enablePan={false}
         enableDamping

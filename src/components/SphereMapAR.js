@@ -81,12 +81,12 @@ const SphereMapAR = React.memo(({ data, video, tourBasePath }) => {
             <group dispose={null}>
                 <mesh>
                 { /* only render the material if we have the overlay */}
-                    { overlay && <sprite scale={[1/2, 1/2]}>
+                    { !!overlay && <sprite scale={[1/2, 1/2]}>
                         <spriteMaterial attach="material" map={texture} />
                     </sprite>}
                 </mesh>
             </group>
-            { virtual_object && <VirtualObject virtual_object={virtual_object} tourBasePath={tourBasePath} />}
+            { !!virtual_object && <VirtualObject virtual_object={virtual_object} tourBasePath={tourBasePath} />}
             <DeviceOrientationControls />
         </>
     );
