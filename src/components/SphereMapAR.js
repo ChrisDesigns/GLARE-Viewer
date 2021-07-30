@@ -67,10 +67,23 @@ function handleVideo(video) {
         });
 }
 
+const SphereOverlay = ( {tourBasePath, overlay} ) => {
+    const texture = useLoader(TextureLoader, tourBasePath + overlay);
+
+    return (
+        <group dispose={null}>
+            <mesh>
+            { /* only render the material if we have the overlay */}
+                <sprite scale={[1/2, 1/2]}>
+                    <spriteMaterial attach="material" map={texture} />
+                </sprite>
+            </mesh>
+        </group>
+    );
+};
+
 const SphereMapAR = React.memo(({ data, video, tourBasePath }) => {
     const { overlay, virtual_object } = data;
-
-    const texture = useLoader(TextureLoader, tourBasePath + overlay);
 
     useEffect(() => {
        handleVideo(video);
@@ -78,14 +91,7 @@ const SphereMapAR = React.memo(({ data, video, tourBasePath }) => {
 
     return (
         <>
-            <group dispose={null}>
-                <mesh>
-                { /* only render the material if we have the overlay */}
-                    { !!overlay && <sprite scale={[1/2, 1/2]}>
-                        <spriteMaterial attach="material" map={texture} />
-                    </sprite>}
-                </mesh>
-            </group>
+            { !!overlay && <SphereOverlay overlay={overlay} tourBasePath={tourBasePath} /> }
             { !!virtual_object && <VirtualObject virtual_object={virtual_object} tourBasePath={tourBasePath} />}
             <DeviceOrientationControls />
         </>
