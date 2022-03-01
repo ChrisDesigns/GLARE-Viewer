@@ -1,5 +1,5 @@
 {
-  "name": "@chrisdesigns/glare-viewer",
+  "name": "@GLARE-Project/glare-viewer",
   "version": "1.0.1",
   "description": "AR and VR viewer component for GLARE",
   "main": "dist/index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChrisDesigns/GLARE-Viewer.git"
+    "url": "git+https://github.com/GLARE-Project/GLARE-Viewer.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ChrisDesigns/GLARE-Viewer/issues"
+    "url": "https://github.com/GLARE-Project/GLARE-Viewer/issues"
   },
-  "homepage": "https://github.com/ChrisDesigns/GLARE-Viewer#readme",
+  "homepage": "https://github.com/GLARE-Project/GLARE-Viewer#readme",
   "dependencies": {
     "@react-three/drei": "^4.3.3",
     "@react-three/fiber": ">=6.0",
